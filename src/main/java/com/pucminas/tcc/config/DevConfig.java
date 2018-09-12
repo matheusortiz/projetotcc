@@ -8,8 +8,8 @@ import org.springframework.context.annotation.Profile;
 import com.pucminas.tcc.services.DBService;
 
 @Configuration
-@Profile("dev")
-public class TestConfig {
+@Profile("test")
+public class DevConfig {
 
 	@Autowired
 	private DBService dbService;
