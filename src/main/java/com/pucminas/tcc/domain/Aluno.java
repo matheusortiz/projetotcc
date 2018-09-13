@@ -5,6 +5,8 @@ import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Aluno implements Serializable{
 
@@ -13,7 +15,10 @@ public class Aluno implements Serializable{
 	@Id
 	private String cpf;
 	
-	private String nome, endereco, municipio, estado, telefone, email, senha;
+	private String nome, endereco, municipio, estado, telefone, email;
+	
+	@JsonIgnore
+	private String senha;
 	
 	public Aluno() {
 		

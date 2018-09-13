@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.pucminas.tcc.domain.Aluno;
@@ -15,6 +16,9 @@ import com.pucminas.tcc.repositories.CursoRepository;
 
 @Service
 public class DBService {
+	
+	@Autowired
+	private BCryptPasswordEncoder pe;
 
 	@Autowired
 	private AlunoRepository alunoRepository;
@@ -27,8 +31,8 @@ public class DBService {
 	public void instantiateTestDataBase() {
 		
 		
-		Aluno a1 = new Aluno("01119076080", "matheus", "rua severino", "UVA", "PR", "(42)99953-6507", "matheus7@gmail.com", "1234");
-		Aluno a2 = new Aluno("111", "luana", "rua barão", "UVA", "PR", "(42)99900-3021", "luana.rodrigues@gmail.com", "1234");
+		Aluno a1 = new Aluno("01119076080", "matheus", "rua severino", "UVA", "PR", "(42)99953-6507", "matheus7@gmail.com", pe.encode("1234"));
+		Aluno a2 = new Aluno("111", "luana", "rua barão", "UVA", "PR", "(42)99900-3021", "luana.rodrigues@gmail.com", pe.encode("1234"));
 		
 		alunoRepository.save(Arrays.asList(a1, a2));
 		
