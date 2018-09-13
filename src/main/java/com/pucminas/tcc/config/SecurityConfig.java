@@ -19,6 +19,7 @@ import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import com.pucminas.tcc.securities.JWTAuthenticationFilter;
+import com.pucminas.tcc.securities.JWTAuthorizationFilter;
 import com.pucminas.tcc.securities.JWTUtil;
 
 @Configuration
@@ -39,7 +40,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	};
 	
 	private static final String[] PUBLIC_MATCHERS_GET = {
-			"/alunos/**"
+//			"/alunos/**"
 	};
 	
 	@Override
@@ -55,6 +56,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.antMatchers(PUBLIC_MATCHERS).permitAll()
 			.anyRequest().authenticated();
 		http.addFilter(new JWTAuthenticationFilter(authenticationManager(), jwtu));
+		http.addFilter(new JWTAuthorizationFilter(authenticationManager(), jwtu, userDetailsService));
 		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 	}
 	
