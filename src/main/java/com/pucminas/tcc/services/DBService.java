@@ -31,10 +31,11 @@ public class DBService {
 	public void instantiateTestDataBase() {
 		
 		
-		Aluno a1 = new Aluno("01119076080", "matheus", "rua severino", "UVA", "PR", "(42)99953-6507", "matheus7@gmail.com", pe.encode("1234"));
-		Aluno a2 = new Aluno("111", "luana", "rua barão", "UVA", "PR", "(42)99900-3021", "luana.rodrigues@gmail.com", pe.encode("1234"));
+		Aluno a1 = new Aluno("01119076080", "Matheus Ortiz", "Rua Severino", "União da Vitória", "PR", "(42)99953-6507", "matheus7@gmail.com", pe.encode("1234"));
+		Aluno a2 = new Aluno("111", "Luana Rodrigues", "Rua Barão", "União da Vitória", "PR", "(42)99900-3021", "luana.rodrigues@outlook.com", pe.encode("1234"));
+		Aluno a3 = new Aluno("11122233344", "Professor da PUC Minas", "PUC Minas", "Belo Horizonte", "MG", "(37)3352-2600", "p@p.com", pe.encode("p"));
 		
-		alunoRepository.save(Arrays.asList(a1, a2));
+		alunoRepository.save(Arrays.asList(a1, a2, a3));
 		
 		Date d = new Date(2017/12/12);
 		
