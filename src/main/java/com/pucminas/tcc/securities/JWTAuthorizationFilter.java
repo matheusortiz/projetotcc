@@ -16,6 +16,9 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationFi
 
 public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
 
+	
+	/* implementação da autorização de acesso pelo JSON Web Token */
+	
 	private JWTUtil jwtUtil;
 	private UserDetailsService userDetailsService;
 

@@ -26,6 +26,8 @@ import com.pucminas.tcc.securities.JWTUtil;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
+	/* classe que configura a segurança dos níveis de acesso aos endpoints */
+	
 	@Autowired
 	private Environment env;
 	

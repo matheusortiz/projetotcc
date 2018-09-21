@@ -17,6 +17,8 @@ import com.pucminas.tcc.repositories.CursoRepository;
 @Service
 public class DBService {
 	
+	/* classe para povoar o banco de dados em ambiente de testes e desenvolvimento */
+	
 	@Autowired
 	private BCryptPasswordEncoder pe;
 

@@ -2,6 +2,8 @@ package com.pucminas.tcc.domain.enums;
 
 public enum Perfil {
 	
+	/* enum de níveis de acesso em caso de implementação futura */
+	
 	ADMIN(1, "ROLE_ADMIN"),
 	ALUNO(2, "ROLE_ALUNO");
 	

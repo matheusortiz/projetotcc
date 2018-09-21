@@ -14,6 +14,8 @@ import com.pucminas.tcc.services.exceptions.ObjectNotFoundException;
 @Service
 public class AlunoService {
 	
+	/* classe de implementação dos serviços oferecidos ao aluno */
+	
 	@Autowired
 	private AlunoRepository repo;
 	private UserSS user;

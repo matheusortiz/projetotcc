@@ -14,6 +14,8 @@ public class TestConfig {
 	@Autowired
 	private DBService dbService;
 	
+	/* instanciação e povoamento do BD de testes */
+	
 	@Bean
 	public boolean instantiateDatabase() {
 		dbService.instantiateTestDataBase();

@@ -9,6 +9,8 @@ import com.pucminas.tcc.domain.Aluno;
 @Repository
 public interface AlunoRepository extends JpaRepository<Aluno, String>{
 	
+	/* busca de aluno por email */
+	
 	@Transactional(readOnly=true)
 	Aluno findByEmail(String email);
 

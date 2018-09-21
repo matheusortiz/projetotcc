@@ -18,6 +18,8 @@ public class DevConfig {
 	@Value("${spring.jpa.hibernate.ddl-auto}")
 	private String strategy;
 	
+	
+	/* chama método de instanciação e povoamento de banco de dados para ambiente de desenvolvimento */
 	@Bean
 	public boolean instantiateDatabase() {
 		

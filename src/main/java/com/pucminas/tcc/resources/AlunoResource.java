@@ -23,6 +23,8 @@ public class AlunoResource {
 	@Autowired
 	private AlunoService svc;
 	
+	/* endpoint de busca de aluno por cpf */
+	
 	@RequestMapping(value="/{cpf}", method=RequestMethod.GET)
 	public ResponseEntity<?> find(@PathVariable String cpf) {
 		Aluno obj = svc.buscar(cpf);
@@ -30,12 +32,16 @@ public class AlunoResource {
 	
 	}
 	
+	/* endpoint de listagem de alunos */
+	
 	@RequestMapping(method=RequestMethod.GET)
 	public ResponseEntity<List<AlunoDTO>> findAll() {
 		List<Aluno> list = svc.findAll();
 		List<AlunoDTO> listDto = list.stream().map(obj -> new AlunoDTO(obj)).collect(Collectors.toList());  
 		return ResponseEntity.ok().body(listDto);
 	}
+	
+	/* endpoint de busca de aluno por email */
 	
 
 	@RequestMapping(value="/email", method=RequestMethod.GET)

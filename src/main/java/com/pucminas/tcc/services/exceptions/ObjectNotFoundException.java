@@ -2,9 +2,7 @@ package com.pucminas.tcc.services.exceptions;
 
 public class ObjectNotFoundException extends RuntimeException{
 
-	/**
-	 * 
-	 */
+	/* tratamento de erros de objetos não encontrados 	 */
 	private static final long serialVersionUID = 1L;
 	
 	

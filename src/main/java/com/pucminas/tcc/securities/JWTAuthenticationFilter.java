@@ -18,6 +18,8 @@ import com.pucminas.tcc.dto.CredenciaisDTO;
 
 public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter{
 	
+	/* implementação da autenticação pelo JSON Web Token */
+	
 	private AuthenticationManager am;
 	private JWTUtil jwtu;
 	
